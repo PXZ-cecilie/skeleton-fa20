@@ -70,13 +70,17 @@ public class Body {
         return FyNet;
     }
 
-    public void update(dt,Fx,Fy){
+    public void update(double dt,double Fx,double Fy){
         double aNetX = Fx/this.mass;
         double aNetY = Fy/this.mass;
         this.xxVel += aNetX * dt;
         this.yyVel += aNetY * dt;
         this.xxPos += this.xxVel * dt;
         this.yyPos += this.yyVel * dt;
+    }
+
+    public void draw() {
+        StdDraw.picture(this.xxPos, this.yyPos, "images/" + this.imgFileName);
     }
 
 }
